@@ -2,7 +2,8 @@
 
 
 def main() -> None:
-    # download -> parse -> chunk -> embed -> write to pgvector
+    # rule documents: download -> parse -> chunk -> embed -> write to pgvector
+    # inspections: download the city's open data -> write to Postgres
     raise NotImplementedError("Week 1")
 
 

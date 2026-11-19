@@ -6,8 +6,8 @@ from dataclasses import dataclass
 @dataclass
 class Chunk:
     text: str
-    ticker: str
-    fiscal_year: int
+    jurisdiction: str  # "federal", "us-ny-nyc", ...
+    source: str  # document title
     section: str
     source_url: str
 

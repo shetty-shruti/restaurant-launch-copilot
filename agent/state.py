@@ -1,4 +1,4 @@
-"""LangGraph state for the research agent (week 4)."""
+"""LangGraph state for the copilot agent (week 4)."""
 
 from typing import TypedDict
 

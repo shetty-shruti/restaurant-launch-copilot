@@ -1,6 +1,8 @@
-"""Kafka consumer for filings.new (weeks 5 to 6).
+"""Kafka consumer for inspections.new (weeks 5 to 6).
 
-Idempotent on accession number; publishes filings.indexed, sends failures to filings.dlq.
+Upserts new restaurant inspection results into Postgres. Idempotent on
+(city, restaurant id, inspection date, violation code); publishes inspections.indexed and
+sends failures to inspections.dlq.
 """
 
 

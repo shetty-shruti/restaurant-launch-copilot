@@ -13,6 +13,7 @@ __pycache__/
 # Data and eval outputs
 data/raw/*
 !data/raw/.gitkeep
+data/processed/
 eval/runs/*
 !eval/runs/.gitkeep
 

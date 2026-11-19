@@ -1,8 +1,8 @@
 # Ingestion service (Go)
 
-Polls EDGAR for new 10-K filings from the configured tickers, saves them to
-storage and publishes `filings.new`. The Python worker (`../ingest/worker.py`)
-consumes those events and indexes the filings.
+Polls each configured city's open data portal (NYC Open Data first) for new
+restaurant inspection results and publishes them to `inspections.new`. The Python
+worker (`../ingest/worker.py`) consumes those events and writes them to Postgres.
 
 Built in weeks 5 to 6. Until then, `make ingest` runs the Python pipeline directly.
 
@@ -10,4 +10,5 @@ Built in weeks 5 to 6. Until then, `make ingest` runs the Python pipeline direct
 go run ./cmd/poller
 ```
 
-Update the module path in `go.mod` once the GitHub repo exists.
+The module path in `go.mod` assumes the GitHub repo is named
+`restaurant-launch-copilot`. Change it if you pick another name.

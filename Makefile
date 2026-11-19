@@ -8,7 +8,7 @@ up:      ## Start Postgres + pgvector and Langfuse
 down:
 	$(COMPOSE) down
 
-ingest:  ## Download, parse, chunk and embed filings (Python path)
+ingest:  ## Load rule documents and inspection data (Python path)
 	uv run python -m ingest.pipeline
 
 eval:    ## Run the eval set and save a run under eval/runs/

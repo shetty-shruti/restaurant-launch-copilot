@@ -5,14 +5,14 @@ from pydantic import BaseModel, Field
 
 class AskRequest(BaseModel):
     question: str = Field(min_length=3, max_length=1000)
-    ticker: str | None = None
-    year: int | None = None
+    # Limit the search to one jurisdiction, e.g. "us-ny-nyc" or "federal". None searches all.
+    jurisdiction: str | None = None
 
 
 class Citation(BaseModel):
     id: int
-    ticker: str
-    fiscal_year: int
+    jurisdiction: str  # "federal", "us-ny-nyc", ...
+    source: str  # document title, e.g. "FDA Food Code 2022" or "NYC Health Code Article 81"
     section: str
     url: str
     snippet: str

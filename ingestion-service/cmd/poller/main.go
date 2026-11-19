@@ -1,5 +1,6 @@
-// Command poller checks SEC EDGAR on a schedule for new 10-K filings and
-// publishes a filings.new event to Kafka for each one (weeks 5 to 6).
+// Command poller checks each city's open data portal on a schedule for new
+// restaurant inspection results and publishes an inspections.new event to
+// Kafka for each one (weeks 5 to 6).
 package main
 
 import (
@@ -8,9 +9,9 @@ import (
 )
 
 func main() {
-	ua := os.Getenv("SEC_USER_AGENT")
-	if ua == "" {
-		log.Fatal("SEC_USER_AGENT is required (\"Name email\")")
+	cities := os.Getenv("CITIES")
+	if cities == "" {
+		cities = "us-ny-nyc"
 	}
-	log.Println("poller: not implemented yet (weeks 5 to 6)")
+	log.Printf("poller: not implemented yet (weeks 5 to 6), cities=%s", cities)
 }

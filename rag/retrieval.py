@@ -1,17 +1,17 @@
-"""Retrieval: vector search (week 1), then hybrid + rerank experiments (weeks 2 to 3)."""
+"""Retrieval: vector search (week 1), then hybrid + rerank experiments (weeks 2 to 3).
+
+A city question should also see federal rules, so a jurisdiction filter of "us-ny-nyc"
+means "us-ny-nyc or federal".
+"""
 
 from rag.chunking import Chunk
 
 
-def vector_search(
-    query: str, k: int = 5, ticker: str | None = None, year: int | None = None
-) -> list[Chunk]:
+def vector_search(query: str, k: int = 5, jurisdiction: str | None = None) -> list[Chunk]:
     raise NotImplementedError("Week 1")
 
 
-def hybrid_search(
-    query: str, k: int = 5, ticker: str | None = None, year: int | None = None
-) -> list[Chunk]:
+def hybrid_search(query: str, k: int = 5, jurisdiction: str | None = None) -> list[Chunk]:
     """Postgres full-text + vector, merged with reciprocal rank fusion."""
     raise NotImplementedError("Weeks 2 to 3")
 
